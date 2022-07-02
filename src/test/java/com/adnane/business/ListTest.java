@@ -28,4 +28,12 @@ public class ListTest {
         assertEquals(3, listMock.size());
         assertEquals(4, listMock.size());
     }
+
+    @Test
+    public void mockListGetMethod(){
+        List listMock = mock(List.class);
+        when(listMock.get(0)).thenReturn("First item");
+        assertEquals("First item", listMock.get(0));
+        assertEquals(null, listMock.get(1));
+    }
 }
